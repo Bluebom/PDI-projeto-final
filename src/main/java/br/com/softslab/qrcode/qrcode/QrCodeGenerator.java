@@ -29,7 +29,7 @@ public class QrCodeGenerator {
 
         QRCodeWriter writer = new QRCodeWriter();
         try {
-            String content = "192.168.2.119:8080/produtos/"+barcodeId;
+            String content = "http://54.161.160.66:8080/produtos/"+barcodeId;
             BitMatrix matrix = writer.encode(content, BarcodeFormat.QR_CODE, width, height, hints);
             String barcodePath = "qrcodes/"+barcodeId+"."+format;
             Path path = FileSystems.getDefault().getPath(barcodePath);
